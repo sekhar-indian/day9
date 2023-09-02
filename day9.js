@@ -41,14 +41,17 @@ function saveLocalStorage(event)
     }
    
     localStorage.setItem(opj.email, JSON.stringify(opj));
-    su(opj);
-} 
-
+   su(opj);
+ 
+  }
 
 function su(opj)
 {
-  const parentE=document.getElementById("addform");
-  const chaild=document.createElement("label");
-  chaild.textContent="Email= "+opj.email+" Name= "+opj.name+" Phone number= "+opj.pnumber;
-  parentE.appendChild(chaild)
+  const parentE=document.getElementById("id");
+  // const chaild=document.createElement("label");
+  // chaild.textContent="Email= "+opj.email+" Name= "+opj.name+" Phone number= "+opj.pnumber;
+  // parentE.appendChild(chaild)
+  parentE.innerHTML=`<lable> ${opj.email}</lable> `;
+  
+
 }
