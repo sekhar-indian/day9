@@ -19,28 +19,36 @@
 // }
 
 
-var va=document.getElementById("addform");
+var value=document.getElementById("addform");
 
-va.addEventListener("submit",formdata);
+value.addEventListener("submit",saveLocalStorage);
 
-function formdata(e){
-     e.preventDefault();
-    
-       var email=document.getElementById("email").value;
-       var name=document.getElementById("name").value;
-       var pnumber=document.getElementById("pnumber").value;
-       var password=document.getElementById("password").value;
+function saveLocalStorage(event)
+{
+  event.preventDefault();
+
+  const email=event.target.email.value;
+    const name=event.target.name.value;
+    const pnumber=event.target.pnumber.value;
+    const password=event.target.password.value;
+
+    const opj={
+      name,
+      email,
+      pnumber,
+      password
+
+    }
    
-    
-    
-    //desplay 
-    var d=document.createElement("lable");
-    d.className="class1";
-    d.id="id1";
-    d.createElement="br";
-    d.appendChild(document.createTextNode(email));
-    va.appendChild(d);
-    console.log(d);
+    localStorage.setItem(opj.email, JSON.stringify(opj));
+    su(opj);
+} 
 
-        
+
+function su(opj)
+{
+  const parentE=document.getElementById("addform");
+  const chaild=document.createElement("label");
+  chaild.textContent="Email= "+opj.email+" Name= "+opj.name+" Phone number= "+opj.pnumber;
+  parentE.appendChild(chaild)
 }
