@@ -19,16 +19,17 @@
             <div class="row">
                 <div class="col-md-6">
                   <div class="box">
-                 <form id="addform">
+                 <form id="addform" onsubmit="saveLocalStorage(event)">
                     <labele >Email</lable><br>
-                    <input type="email" class="form-control mr-8" id="email" required><br>
+                    <input type="email" class="form-control mr-8" name="email" ><br>
                     <labele>Full name</lable><br>
-                    <input type="text" class="form-control mr-2" id="name" required><br>
+                    <input type="text" class="form-control mr-2" name="name" ><br>
                     <labele>Phone Number</lable><br>
-                    <input type="text" class="form-control mr-2" id="pnumber" required><br>
+                    <input type="text" class="form-control mr-2" name="pnumber" ><br>
                     <labele>Password</lable><br>
-                    <input type="password" class="form-control mr-2" id="password" required><br>
-                    <input type="submit" value="Submit" class="btn btn-dark">
+                    <input type="password" class="form-control mr-2" name="password" ><br>
+                    <input type="submit" value="Submit" class="btn btn-dark"><br>
+
                 </form>              
                 </div>
               </div> 
