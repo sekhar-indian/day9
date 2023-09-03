@@ -21,6 +21,9 @@
 
 var value=document.getElementById("addform");
 
+var btn=document.getElementById('id');
+btn.addEventListener("click",btnf);
+
 value.addEventListener("submit",saveLocalStorage);
 
 function saveLocalStorage(event)
@@ -53,5 +56,32 @@ function su(opj)
   // parentE.appendChild(chaild)
   parentE.innerHTML=`<lable> ${opj.email}</lable> `;
   
+  // create a button
+    var deletebtn=document.createElement("button");
+    deletebtn.setAttribute("type",'button')
+    deletebtn.appendChild(document.createTextNode("Delete"));
+    //append button in parente
+    parentE.appendChild(deletebtn);
+    deletebtn.className="delete";
+  //
 
 }
+
+   
+    function btnf(e)
+    {
+      if(e.target.classList.contains("delete"))
+      {
+        var i=e.target.parentElement;
+        
+        var email=i.querySelector("label").textContent;
+        localStorage.removeItem(email);
+    
+        i.remove();
+      }
+    }
+    var value = document.getElementById("addform");
+    var btn = document.getElementById('id');
+    btn.addEventListener("click", btnf);
+    
+    value.addEventListener("submit", saveLocalStorage);
